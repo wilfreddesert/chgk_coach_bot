@@ -9,7 +9,12 @@ import requests
 from xml.etree import ElementTree
 import asyncio
 
-from config import TOKEN
+import os
+
+try:
+    from config import TOKEN
+except ImportError:
+    TOKEN = os.environ["TOKEN"]
 from messages import MESSAGES
 
 
