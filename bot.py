@@ -22,7 +22,6 @@ logging.basicConfig(
 )
 
 current_answers = []
-correct = False
 history = set()
 
 
