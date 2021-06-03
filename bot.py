@@ -59,6 +59,7 @@ async def process_help_command(message: types.Message):
     if question_id in history:
         await message.reply(f"Правильный ответ: {answer}")
         await message.reply(f"Комментарий: {comment}")
+        history.remove(question_id)
 
 
 @dp.message_handler(state="*")
