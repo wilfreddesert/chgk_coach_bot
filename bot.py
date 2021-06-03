@@ -60,7 +60,7 @@ async def process_help_command(message: types.Message):
         await message.reply(f"Руша, осталось 10 секунд!")
     await asyncio.sleep(10)
     if question_id in history:
-        await message.reply(f"Правильный ответ: {answer}\n Комментарий: {comment}")
+        await message.reply(f"<b>Правильный ответ</b>: {answer}\n \n <b>Комментарий</b>: {comment}", parse_mode="HTML")
         # await message.reply(f"Комментарий: {comment}")
         history.remove(question_id)
 
@@ -71,10 +71,10 @@ async def process_pending(message: types.Message):
         if message.text == current_answers[-1]:
             first_name = message.from_user.first_name
             last_name = message.from_user.last_name
-            await message.reply(f"Верно, {first_name} {last_name}!", reply=False)
+            await message.reply(f"Верно, <b>{first_name} {last_name}</b>!", reply=False, parse_mode="HTML")
             history.remove(current_question.question)
         else:
-            await message.reply("Это неверный ответ!", reply=False)
+            await message.reply("Увы, нет. Так Мыndex не выиграет чемпионат мира по ЧГК :(", reply=False)
 
 
 async def shutdown(dispatcher: Dispatcher):
