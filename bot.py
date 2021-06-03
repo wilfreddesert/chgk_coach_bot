@@ -75,7 +75,7 @@ async def process_help_command(message: types.Message):
 @dp.message_handler(state="*")
 async def process_pending(message: types.Message):
     if current_question.question in history:
-        if message.text == current_answers[-1]:
+        if message.text.lower() == current_answers[-1].lower():
             first_name = message.from_user.first_name
             last_name = message.from_user.last_name
             await message.reply(
