@@ -55,7 +55,9 @@ async def process_help_command(message: types.Message):
     current_question.question = question_id
     history.add(question_id)
     # await message.reply(answer)
-    await asyncio.sleep(60)
+    await asyncio.sleep(50)
+    await message.reply(f"Руша, осталось 10 секунд!")
+    await asyncio.sleep(10)
     if question_id in history:
         await message.reply(f"Правильный ответ: {answer}")
         await message.reply(f"Комментарий: {comment}")
