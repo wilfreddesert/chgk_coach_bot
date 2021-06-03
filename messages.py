@@ -1,8 +1,6 @@
-
-
 start_message = "Салют, Мыndex. Напоминаю, что в субботу игра в 13:00. Приходить обязательно. Назим, тебя тоже касается"
 
 
 MESSAGES = {
-    'start': start_message,
+    "start": start_message,
 }
