@@ -60,8 +60,8 @@ async def process_help_command(message: types.Message):
         await message.reply(f"Руша, осталось 10 секунд!")
     await asyncio.sleep(10)
     if question_id in history:
-        await message.reply(f"Правильный ответ: {answer}")
-        await message.reply(f"Комментарий: {comment}")
+        await message.reply(f"Правильный ответ: {answer}\n Комментарий: {comment}")
+        # await message.reply(f"Комментарий: {comment}")
         history.remove(question_id)
 
 
