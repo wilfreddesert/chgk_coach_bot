@@ -56,7 +56,7 @@ async def process_help_command(message: types.Message):
     pass_criteria = root.find("PassCriteria") or ""
     answer = root.find("Answer").text.replace(".", "")
     current_answers.append(answer)
-    await message.reply(f"Внимание, вопрос: \n\n {question}", parse_mode="HTML")
+    await message.reply(f"<b>Внимание, вопрос</b>: \n\n {question}", parse_mode="HTML")
     current_question.question = question_id
     history.add(question_id)
     # await message.reply(answer)
@@ -66,7 +66,7 @@ async def process_help_command(message: types.Message):
     await asyncio.sleep(10)
     if question_id in history:
         await message.reply(
-            f"<b>Правильный ответ</b>: {answer}\n <b>Зачет: {pass_criteria} \n \n <b>Комментарий</b>: {comment}",
+            f"<b>Правильный ответ</b>: {answer}\n <b>Зачет</b>: {pass_criteria} \n \n <b>Комментарий</b>: {comment}",
             parse_mode="HTML",
         )
         # await message.reply(f"Комментарий: {comment}")
